@@ -1,28 +1,59 @@
-# Node Starter
+# People
 
-~~**Update:** A `pnpm-lock.yaml` file was added to the root of the project. If possible use `pnpm` over `npm`. You might like it better. See [the docs 📝](https://pnpm.io/motivation) if interested. If not, delete this file.~~
+1. Open up [`index.js`](./app/index.js).
 
-## TLDR
+1. Create an **object literal** called `person` that represents you. It should have the following properties:
 
-Use of this starter template assumes that you have a 'complete dev environment' setup - a terminal, Node, VS Code, at least. If not, you may want to [start here.](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-for-JS-02a4e9f4a30043d3a8e7d109be3448f4)
+- `firstName`
+- `lastName`
+- `age`
 
-1. Click that big green button to start using it.
-2. `clone` your new repo from your GitHub to your local computer
-3. `cd` into the `clone`d repo and enter: `npm i`.
-4. `npm start`
+---
 
-## Some of What's Included
+1. Create a new file called `lib.js` inside of the `app` directory. Create a **function** called `isLegal2Drink` that takes in a `person` object and returns `true` if the person is 21 or older, and `false` if they are not.
 
-- [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-- Various VS Code 'settings' and 'extensions.' Look in the bottom right when you open this up in VS Code to install them.
-- [Vitest](https://vitest.dev/) for testing. Just do `npm test` or `npm t`.
+1. Export this function as a **named export (ESM)**. Import it into `app/index.js` and invoke it with the `person` object you created in step 1. Log the result to the console.
 
-## How To Use
+---
 
-Run `npm i` to get all the things installed.
+1. Back in `app/lib.js`, write a new function called `assignOccupation`. It should take in a `person` object and a `string` representing an occupation. It should add a new property to the `person` object called `occupation` and set it to the `string` that was passed in. Use the **spread operator** to avoid mutating the original `person` object.
 
-`npm start` will watch the `app` directory for any changes using `nodemon`
+1. Export this function as a **default export (ESM)**. Import it into `app/index.js` and invoke it with the `person` object you created in step 1 and a string representing your occupation. Log the result to the console.
 
-## Other Notes
+---
 
-To use the new experimental `fetch` that's now in Node, just add: `/* global fetch */` to the top of your file. This will appease ESLint.
+1. Create a new directory inside of `app` called `components`. Inside of this directory, create a file, `Heading.js`. This function should take in two parameters: `firstName` and `lastName`. It should return an HTML string: `<h1>Welcome,` followed by the `firstName` and `lastName` parameters, followed by `</h1>` (e.g. `<h1>Welcome, John Doe</h1>`).
+
+Note that we are not using JSX as this is Node, not React. We are just returning a string of HTML.
+
+Naturally, we want to export this function so that we can import it into `app/index.js`. Export it as a **named export (ESM)**. Then, once again, import it in `app/index.js` and invoke it with the `firstName` and `lastName` properties of the `person` object you created in step 1. Log the result to the console.
+
+---
+
+Create a new file in `app` called `fleet.js`. This file will represent a fleet of cars. Create an **array literal** called `fleet` that contains 3 objects. Each object should represent a car and have the following properties:
+
+- `make`
+- `model`
+- `year`
+- `color`
+- `dailyRate`
+
+Export this array as a **default export (ESM)**.
+
+---
+
+Go back to `app/lib.js`. Add some variables in SCREAMING_SNAKE_CASE at the top of the file. These variables should represent the following:
+
+- `TAX_RATE`
+- `SERVICE_FEE`
+
+Note that these will not be exported. They are just variables that we will use in our functions within `lib.js`.
+
+Create a new function called `calcRentalCarCost`. This one will be another named export. It will take in three parameters (Hint: Clean Code! Use object destructuring!): `car`, `person`, `days`. It should return the total cost of renting the car for the number of days specified. The total cost should be calculated as follows:
+
+- The daily rate of the car multiplied by the number of days
+- Plus the service fee
+- Plus the tax rate
+- If the person's age is under 25, add an additional $10 per day. Hint: You could create a separate function for this. No need to export it. It would just be called by `calcRentalCarCost`.
+
+Back in `app/index.js`, import the `calcRentalCarCost` function and invoke it with the first car in the `fleet` array, the `person` object, and a number of days. Log the result to the console.
