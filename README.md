@@ -1,15 +1,5 @@
 # People
 
-1. Open up [`index.js`](./app/index.js).
-
-1. Create an **object literal** called `person` that represents you. It should have the following properties:
-
-- `firstName`
-- `lastName`
-- `age`
-
----
-
 1. Create a new file called `lib.js` inside of the `app` directory. Create a **function** called `isLegal2Drink` that takes in a `person` object and returns `true` if the person is 21 or older, and `false` if they are not.
 
 1. Export this function as a **named export (ESM)**. Import it into `app/index.js` and invoke it with the `person` object you created in step 1. Log the result to the console.
