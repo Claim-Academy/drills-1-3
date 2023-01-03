@@ -1,9 +1,5 @@
 # People
 
-1. Create a new file called `lib.js` inside of the `app` directory. Create a **function** called `isLegal2Drink` that takes in a `person` object and returns `true` if the person is 21 or older, and `false` if they are not.
-
-1. Export this function as a **named export (ESM)**. Import it into `app/index.js` and invoke it with the `person` object you created in step 1. Log the result to the console.
-
 ---
 
 1. Back in `app/lib.js`, write a new function called `assignOccupation`. It should take in a `person` object and a `string` representing an occupation. It should add a new property to the `person` object called `occupation` and set it to the `string` that was passed in. Use the **spread operator** to avoid mutating the original `person` object.
