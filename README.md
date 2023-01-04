@@ -4,7 +4,7 @@
 
 1. Back in `app/lib.js`, write a new function called `assignOccupation`. It should take in a `person` object and a `string` representing an occupation. It should add a new property to the `person` object called `occupation` and set it to the `string` that was passed in. Use the **spread operator** to avoid mutating the original `person` object.
 
-1. Export this function as a **default export (ESM)**. Import it into `app/index.js` and invoke it with the `person` object you created in step 1 and a string representing your occupation. Log the result to the console.
+1. Export this function. Import it into `app/index.js` and invoke it with the `person` object you created in step 1 and a string representing your occupation. Log the result to the console.
 
 ---
 
