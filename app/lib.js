@@ -1,4 +1,17 @@
 /**
+ * function addOccupation(person, occupation) {
+ * return {
+ *  ...person,
+ * occupation,
+ * }
+ */
+
+export const addOccupation = (person, occupation) => ({
+  ...person,
+  occupation,
+});
+
+/**
  * FUNCTION DECLARATION
  * function isLegal2Drink(person) {
  *  return person.age >= 21;
