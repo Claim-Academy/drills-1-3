@@ -1,21 +1,5 @@
 # People
 
----
-
-1. Back in `app/lib.js`, write a new function called `assignOccupation`. It should take in a `person` object and a `string` representing an occupation. It should add a new property to the `person` object called `occupation` and set it to the `string` that was passed in. Use the **spread operator** to avoid mutating the original `person` object.
-
-1. Export this function. Import it into `app/index.js` and invoke it with the `person` object you created in step 1 and a string representing your occupation. Log the result to the console.
-
----
-
-1. Create a new directory inside of `app` called `components`. Inside of this directory, create a file, `Heading.js`. This function should take in two parameters: `firstName` and `lastName`. It should return an HTML string: `<h1>Welcome,` followed by the `firstName` and `lastName` parameters, followed by `</h1>` (e.g. `<h1>Welcome, John Doe</h1>`).
-
-Note that we are not using JSX as this is Node, not React. We are just returning a string of HTML.
-
-Naturally, we want to export this function so that we can import it into `app/index.js`. Export it as a **named export (ESM)**. Then, once again, import it in `app/index.js` and invoke it with the `firstName` and `lastName` properties of the `person` object you created in step 1. Log the result to the console.
-
----
-
 Create a new file in `app` called `fleet.js`. This file will represent a fleet of cars. Create an **array literal** called `fleet` that contains 3 objects. Each object should represent a car and have the following properties:
 
 - `make`

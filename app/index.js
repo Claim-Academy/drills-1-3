@@ -1,7 +1,8 @@
 // NAMED EXPORTS use curly braces
 // We need the file extension, '.js', when importing a file
 // unless we are using a bundler like Webpack or Vite.
-import { isLegal2Drink, addOccupation } from "./lib.js";
+import Heading from "./components/Heading.js";
+import { addOccupation } from "./lib.js";
 
 const persons = [
   {
@@ -22,3 +23,12 @@ const persons = [
 ];
 
 const personWithOccupation = addOccupation(persons[0], "Student");
+
+const headings = persons
+  .map((person) =>
+    // Call the Heading function component and pass in the person's first and last name
+    Heading(person.firstName, person.lastName)
+  )
+  .join("");
+
+console.log(headings);
