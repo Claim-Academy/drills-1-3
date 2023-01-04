@@ -20,7 +20,3 @@ const persons = [
     age: 35,
   },
 ];
-
-console.log(isLegal2Drink(persons[1]));
-
-const legalDrinkers = persons.map(isLegal2Drink);
