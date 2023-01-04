@@ -1,6 +1,6 @@
 // '../' means go up one directory
 import { expect, it } from "vitest";
-import { isLegal2Drink } from "../app/lib.js";
+import { addOccupation, isLegal2Drink } from "../app/lib.js";
 
 it("returns true if person is 21 or older", () => {
   // Arrange
@@ -32,4 +32,18 @@ it("returns false if person is under 21", () => {
 
   // Assert
   expect(actual).toBe(expected);
+});
+
+it("adds occupation to person object", () => {
+  const inputPerson = {};
+  const inputOccupation = "Developer";
+
+  const expected = {
+    ...inputPerson,
+    occupation: "Developer",
+  };
+
+  const actual = addOccupation(inputPerson, inputOccupation);
+
+  expect(actual).toEqual(expected);
 });
